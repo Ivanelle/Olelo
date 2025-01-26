@@ -7,6 +7,7 @@ import  {
 } from 'react-native';
 import { hawaiianWords } from "./data/hawaiianWords";
 import NextWordButton from './app/components/NextWordButton';
+import SoundButton from './app/components/Audio/SoundButton';
 
 export default function App() {
     const [currentWord, setCurrentWord] = useState (
@@ -25,6 +26,7 @@ export default function App() {
     return (
         <View style={styles.container}>
             <Text style={styles.mainWord}>{currentWord.hawaiianWord}</Text>
+            <SoundButton />
             <Text style={styles.pronunciation}>/{currentWord.pronunciation}/</Text>
             <Text style={styles.type}>{currentWord.type}</Text>
             <Text style={styles.translation}>{currentWord.englishTranslation}</Text>
