@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-import {
-  View, Text,
-  StyleSheet
-} from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 import SoundButton from './Audio/SoundButton';
 import NextWordButton from './NextWordButton';
 
@@ -14,22 +11,18 @@ interface WordCardProps {
     englishTranslation: string;
   };
   onNextWord: () => void;
+  isWordChanged: boolean;
 }
 
-const WordCard: React.FC<WordCardProps> = ({ currentWord, onNextWord }) => {
-    const [isWordChanged, setIsWordChanged ] = useState(false);
-
-    const handleNextWord = () => {
-        setIsWordChanged(!isWordChanged)
-    }
+const WordCard: React.FC<WordCardProps> = ({ currentWord, onNextWord, isWordChanged }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.mainWord}>{currentWord.hawaiianWord}</Text>
-      <SoundButton isWordChanged={isWordChanged}/>
+      <SoundButton isWordChanged={isWordChanged} />
       <Text style={styles.pronunciation}>/{currentWord.pronunciation}/</Text>
       <Text style={styles.type}>{currentWord.type}</Text>
       <Text style={styles.translation}>{currentWord.englishTranslation}</Text>
-      <NextWordButton onPress={onNextWord}/>
+      <NextWordButton onPress={onNextWord} />
     </View>
   );
 };
@@ -72,7 +65,7 @@ const styles = StyleSheet.create({
     color: '#2980B9',
     fontWeight: '600',
     marginTop: 10,
-  }
+  },
 });
 
 export default WordCard;
