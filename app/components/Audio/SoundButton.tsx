@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Audio } from 'expo-av';
 import { TouchableOpacity, StyleSheet } from 'react-native';
-import Svg, { Path } from 'react-native-svg'; // Import Svg and Path from react-native-svg
+import Svg, { Path } from 'react-native-svg'; 
+
 
 interface SoundButtonProps {
   isWordChanged: boolean;
@@ -56,13 +57,17 @@ const SoundButton: React.FC<SoundButtonProps> = ({ isWordChanged }) => {
   return (
     <TouchableOpacity
       onPress={toggleSound}
-    //   style={[styles.button, isPlaying ? styles.playingButton : styles.stoppedButton]}
       activeOpacity={0.7}
     >
 
       <Svg
         xmlns="http://www.w3.org/2000/svg"
-        style={[styles.icon, isPlaying ? styles]}
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth={1.5}
+        stroke={isPlaying ? '#07607b' : '#4eacb8'} // Change icon color based on playing state
+        width={24}
+        height={24}
       >
         <Path
           strokeLinecap="round"
@@ -82,20 +87,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  icon: {
-    fill: "none",
-    viewBox: "0 0 24 24",
-    strokeWidth: 1.5,
-    stroke: {isPlaying ? '#ADD8E6' : '#E8E8E8'}, // Change icon color based on playing state
-    width={24},
-    height={24}
-  }
-//   playingButton: {
-//     backgroundColor: '#ADD8E6',
-//   },
-//   stoppedButton: {
-//     backgroundColor: '#E8E8E8', 
-//   },
 });
 
 export default SoundButton;

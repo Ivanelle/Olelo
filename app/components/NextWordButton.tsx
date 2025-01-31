@@ -14,7 +14,7 @@ const NextWordButton = ({ onPress }) => {
 
 const styles = StyleSheet.create({
     button: {
-      backgroundColor: '#2980B9',
+      backgroundColor: '#4eacb8',
       paddingVertical: 10, 
       paddingHorizontal: 20,  
       borderRadius: 8,  
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
       elevation: 3,
     },
     buttonText: {
-      color: 'white',
+      color: '#f6f1d2',
       fontSize: 16, 
       fontWeight: '600',
       textTransform: 'uppercase',
