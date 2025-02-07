@@ -14,7 +14,6 @@ exports.up = function(knex) {
         table.timestamp(true, true)
     }
     )
-  
 };
 
 /**
