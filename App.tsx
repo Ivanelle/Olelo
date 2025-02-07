@@ -13,7 +13,7 @@ export default function App() {
     const remainingWords = hawaiianWords.filter((w) => w.id !== currentWord.id);
     const newWord = remainingWords[Math.floor(Math.random() * remainingWords.length)];
     setCurrentWord(newWord);
-    setIsWordChanged((prev) => !prev); // Toggle isWordChanged to trigger sound reload
+    setIsWordChanged((prev) => !prev); 
   };
 
   return (

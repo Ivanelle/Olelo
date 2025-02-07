@@ -65,7 +65,7 @@ const SoundButton: React.FC<SoundButtonProps> = ({ isWordChanged }) => {
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke={isPlaying ? '#07607b' : '#4eacb8'} // Change icon color based on playing state
+        stroke={isPlaying ? '#07607b' : '#4eacb8'} 
         width={24}
         height={24}
       >
