@@ -166,7 +166,7 @@ export const hawaiianWords = [
         hawaiianWord: "'Eiwa",
         englishTranslation: "Nine",
         type: "noun/adjective",
-        pronunciation: "aye-Vah",
+        pronunciation: "aye-Vpah",
         soundsLike: null,
         example: null,
     },
