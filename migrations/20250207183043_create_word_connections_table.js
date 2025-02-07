@@ -3,6 +3,7 @@
  * @returns { Promise<void> }
  */
 exports.up = function(knex) {
+    return knex.schema.createTable ('word_connections', (table) => {
     table.increments('id').primary(); // Primary key
     table.integer('word_id').unsigned().notNullable(); // Foreign key to `words` table
     table.integer('connected_word_id').unsigned().notNullable(); // Foreign key to `words` table
@@ -15,6 +16,8 @@ exports.up = function(knex) {
 
     // Ensure no duplicate connections
     table.unique(['word_id', 'connected_word_id']);
+    }
+    )
 };
 
 /**
