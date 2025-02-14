@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import SoundButton from './Audio/SoundButton';
 import NextWordButton from './NextWordButton';
+import HeartButton from './Heart/HeartButton';
 
 interface WordCardProps {
   currentWord: {

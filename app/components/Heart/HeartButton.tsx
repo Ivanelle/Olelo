@@ -33,5 +33,15 @@ const HeartButton = ({ wordId }) => {
         }
     };
 
-    
-}
+    return (
+        <TouchableOpacity>
+            <MaterialIcons 
+                name={isHearted ? 'favorite' : 'favorite-border'}
+                size={24}
+                color={isHearted ? 'red' : 'gray'}
+            />
+        </TouchableOpacity>
+    );
+};
+
+export default HeartButton;
