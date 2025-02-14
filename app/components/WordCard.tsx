@@ -6,6 +6,7 @@ import HeartButton from './Heart/HeartButton';
 
 interface WordCardProps {
   currentWord: {
+    id: number;
     hawaiianWord: string;
     pronunciation: string;
     type: string;
@@ -18,13 +19,17 @@ interface WordCardProps {
 const WordCard: React.FC<WordCardProps> = ({ currentWord, onNextWord, isWordChanged }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.mainWord}>{currentWord.hawaiianWord}</Text>
+    <Text style={styles.mainWord}>{currentWord.hawaiianWord}</Text>
+    <View style={styles.buttonsContainer}>
       <SoundButton isWordChanged={isWordChanged} />
-      <Text style={styles.pronunciation}>/{currentWord.pronunciation}/</Text>
-      <Text style={styles.type}>{currentWord.type}</Text>
-      <Text style={styles.translation}>{currentWord.englishTranslation}</Text>
-      <NextWordButton onPress={onNextWord} />
+      <HeartButton wordId={currentWord.id} /> 
+
     </View>
+    <Text style={styles.pronunciation}>/{currentWord.pronunciation}/</Text>
+    <Text style={styles.type}>{currentWord.type}</Text>
+    <Text style={styles.translation}>{currentWord.englishTranslation}</Text>
+    <NextWordButton onPress={onNextWord} />
+  </View>
   );
 };
 
@@ -66,6 +71,12 @@ const styles = StyleSheet.create({
     color: '#6cd1af',
     fontWeight: '600',
     marginTop: 10,
+  },
+  buttonsContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
   },
 });
 

@@ -18,7 +18,11 @@ export default function App() {
 
   return (
     <SafeAreaView style={styles.container}>
-      <WordCard currentWord={currentWord} onNextWord={getNextWord} isWordChanged={isWordChanged} />
+      <WordCard 
+        currentWord={currentWord} 
+        onNextWord={getNextWord} 
+        isWordChanged={isWordChanged}  
+      />
     </SafeAreaView>
   );
 }
