@@ -34,7 +34,7 @@ const HeartButton = ({ wordId }) => {
     };
 
     return (
-        <TouchableOpacity>
+        <TouchableOpacity onPress={toggleHeart} style={{ padding: 8 }}>
             <MaterialIcons 
                 name={isHearted ? 'favorite' : 'favorite-border'}
                 size={24}
