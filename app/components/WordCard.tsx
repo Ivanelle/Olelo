@@ -22,7 +22,7 @@ const WordCard: React.FC<WordCardProps> = ({ currentWord, onNextWord, isWordChan
     <Text style={styles.mainWord}>{currentWord.hawaiianWord}</Text>
     <View style={styles.buttonsContainer}>
       <SoundButton isWordChanged={isWordChanged} />
-      <HeartButton wordId={currentWord.id} /> 
+      <HeartButton word={currentWord} /> 
 
     </View>
     <Text style={styles.pronunciation}>/{currentWord.pronunciation}/</Text>
