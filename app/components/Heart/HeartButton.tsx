@@ -3,17 +3,17 @@ import { TouchableOpacity, Alert } from 'react-native';
 import { MaterialIcons } from '@expo/vector-icons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const HeartButton = ({ wordId }) => {
+const HeartButton = ({ word }) => {
   const [isHearted, setIsHearted] = useState(false);
 
   useEffect(() => {
     const checkIfHearted = async () => {
       const heartedWords = JSON.parse(await AsyncStorage.getItem('heartedWords') || '[]');
-      setIsHearted(heartedWords.includes(wordId));
+      setIsHearted(heartedWords.some((w) => w.id === word.id));
     };
 
     checkIfHearted();
-  }, [wordId]);
+  }, [word]);
 
   const toggleHeart = async () => {
     try {
@@ -21,9 +21,9 @@ const HeartButton = ({ wordId }) => {
       let updatedHeartedWords;
 
       if (isHearted) {
-        updatedHeartedWords = heartedWords.filter((id) => id !== wordId);
+        updatedHeartedWords = heartedWords.filter((w) => w.id !== word.id);
       } else {
-        updatedHeartedWords = [...heartedWords, wordId];
+        updatedHeartedWords = [...heartedWords, word];
       }
 
       await AsyncStorage.setItem('heartedWords', JSON.stringify(updatedHeartedWords));

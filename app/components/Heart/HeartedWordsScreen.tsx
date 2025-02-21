@@ -3,7 +3,7 @@ import { FlatList, View, Text, StyleSheet } from 'react-native';
 import AsyncStorage
 from '@react-native-async-storage/async-storage';
 
-const HeartedWordScreen = () => {
+const HeartedWordsScreen = () => {
     const [heartedWords, setHeartedWords ] = useState([]);
 
     useEffect(() => {
@@ -80,3 +80,5 @@ const HeartedWordScreen = () => {
         marginTop: 20,
       },
     });
+
+export default HeartedWordsScreen;
